@@ -23,7 +23,7 @@ namespace TryOut01
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<dbOnlineContext>(options => options.UseNpgsql("Host=127.0.0.1;Username=postgres;Password=qwerty;Database=tryout_db"));
+            services.AddDbContext<dbOnlineContext>(options => options.UseNpgsql("Host=ec2-18-213-176-229.compute-1.amazonaws.com;Username=npsqbetnpzkyag;Password=0137c1cd21fe48a86c9c48b1f1c2d8c8fbd94e70d083c8d391684fd64f22e02a;Database=d5tq7807a6m089;SSL Mode=Require;Trust Server Certificate=true"));
             services.AddControllers();
         }
 
