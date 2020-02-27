@@ -7,7 +7,7 @@ using TryOut01.Model;
 namespace TryOut01.Controllers
 {
     [ApiController]
-    [Route("driver")]
+    [Route("/api/v1/driver")]
     public class DriverController : ControllerBase
     {
         private readonly ILogger<DriverController> _logger;

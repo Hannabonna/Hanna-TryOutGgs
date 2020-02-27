@@ -7,7 +7,7 @@ using TryOut01.Model;
 namespace TryOut01.Controllers
 {
     [ApiController]
-    [Route("customer")]
+    [Route("/api/v1/customer")]
     public class CustomerController : ControllerBase
     {
         private readonly ILogger<CustomerController> _logger;
