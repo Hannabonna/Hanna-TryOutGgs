@@ -20,20 +20,13 @@ namespace TryOut01.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateDriver()
+        public IActionResult CreateDriver(Driver driver)
         {
-            var driv = new Driver
-            {   
-                FullName = "Johny Doe",
-                PhoneNumber = "08123456789",
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
-            };
 
-            _context.Drivers.Add(driv);
+            _context.Drivers.Add(driver);
             _context.SaveChanges();
 
-            return Ok(driv);
+            return Ok(driver);
         }
         
         [HttpGet]

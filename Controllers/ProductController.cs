@@ -20,20 +20,13 @@ namespace TryOut01.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateProduct()
+        public IActionResult CreateProduct(Product product)
         {
-            var prod = new Product
-            {   
-                Name = "Apple",
-                Price = 100000,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
-            };
-
-            _context.Products.Add(prod);
+            
+            _context.Products.Add(product);
             _context.SaveChanges();
 
-            return Ok(prod);
+            return Ok(product);
         }
 
         [HttpGet]

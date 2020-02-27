@@ -20,21 +20,13 @@ namespace TryOut01.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateOrder()
+        public IActionResult CreateOrder(Order order)
         {
-            var or = new Order
-            {   
-                UserId = 2,
-                Status = "sending",
-                DriverId = 1,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
-            };
 
-            _context.Orders.Add(or);
+            _context.Orders.Add(order);
             _context.SaveChanges();
 
-            return Ok(or);
+            return Ok(order);
         }
         
         [HttpGet]

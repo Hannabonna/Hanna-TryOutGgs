@@ -20,22 +20,13 @@ namespace TryOut01.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateCustomer()
+        public IActionResult CreateCustomer(Customer customer)
         {
-            var custom = new Customer
-            {   
-                FullName = "Johny Doe",
-                Username = "doe",
-                Email = "john@doe.com",
-                PhoneNumber = "08123456789",
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
-            };
 
-            _context.Customers.Add(custom);
+            _context.Customers.Add(customer);
             _context.SaveChanges();
 
-            return Ok(custom);
+            return Ok(customer);
         }
 
         [HttpGet]
